@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MY Fitness </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="app">
+
+<header class="app-header">
+<h1>🔥 MY Fitness </h1>
+<p id="todayDate"></p>
+
+<nav>
+<button class="nav-btn active" data-screen="nutritionScreen">Food</button>
+<button class="nav-btn" data-screen="workoutScreen">Workout</button>
+<button class="nav-btn" data-screen="healthScreen">Health</button>
+<button class="nav-btn" data-screen="settingsScreen">Settings</button>
+</nav>
+</header>
+
+<main>
+
+<!-- NUTRITION -->
+<section id="nutritionScreen" class="screen active">
+
+<div class="card">
+<h2>Select Day</h2>
+<select id="daySelect"></select>
+</div>
+
+<div class="card">
+<h2>🍽 Food Intake</h2>
+<div id="foodListContainer"></div>
+</div>
+
+<div class="card center">
+<h2>Daily Calories (Target 1900)</h2>
+<div class="circle-container">
+<svg width="200" height="200">
+<circle cx="100" cy="100" r="80" class="bg-circle"></circle>
+<circle cx="100" cy="100" r="80" class="progress-circle" id="progressCircle"></circle>
+</svg>
+<div class="calorie-text">
+<h3 id="totalCalories">0</h3>
+<p>/ 1900 kcal</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>🍬 Sugar Cut</h2>
+<p id="sugarStatus">Sugar avoided today: ❌</p>
+<button id="toggleSugarBtn">Toggle Sugar Cut</button>
+</div>
+
+</section>
+
+<!-- WORKOUT -->
+<section id="workoutScreen" class="screen">
+
+<div class="card">
+<h2>🏋 Workout</h2>
+
+<select id="workoutType">
+<option value="pushups">Chest (Pushups)</option>
+<option value="chestpress">Chest Press</option>
+<option value="shoulderpress">Shoulder Press</option>
+<option value="lateralraise">Lateral Raise</option>
+<option value="ropejump">Rope Jump</option>
+<option value="running">Running</option>
+<option value="walking">Walking</option>
+<option value="squats">Squats</option>
+</select>
+
+<input type="number" id="workoutSets" placeholder="Sets">
+<input type="number" id="workoutReps" placeholder="Reps / Minutes">
+
+<button id="applyWorkoutBtn">Apply Workout</button>
+<p id="workoutResult"></p>
+</div>
+
+<div class="card">
+<h2>🔥 Streak</h2>
+<p id="streakDisplay">0 Days</p>
+</div>
+
+</section>
+
+<!-- HEALTH -->
+<section id="healthScreen" class="screen">
+
+<div class="card">
+<h2>🧮 BMI</h2>
+<input type="number" id="height" placeholder="Height (cm)">
+<input type="number" id="weightBMI" placeholder="Weight (kg)">
+<button id="calculateBMIBtn">Calculate</button>
+<p id="bmiResult"></p>
+</div>
+
+<div class="card">
+<h2>📉 Weekly Weight</h2>
+<input type="number" id="weeklyWeight" placeholder="Enter weight">
+<button id="saveWeightBtn">Save</button>
+<p id="weightHistory"></p>
+</div>
+
+</section>
+
+<!-- SETTINGS -->
+<section id="settingsScreen" class="screen">
+<div class="card">
+<h2>⚙ Settings</h2>
+<button id="toggleDarkModeBtn">🌙 Dark Mode</button>
+</div>
+</section>
+
+</main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
